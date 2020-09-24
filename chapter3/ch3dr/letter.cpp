@@ -8,7 +8,7 @@
     cin >> first_name;
 
     cout << "Dear " << first_name << ",\n"
-        << "    How are you? I am fine. I hope you are doing well.\n"
+        << "\tHow are you? I am fine. I hope you are doing well.\n"
         << "I have just finished the book you sent me last month. It was amazing.\n";
 
     cout << "Please enter the name of another friend:\n";
@@ -40,15 +40,15 @@
     cout << "I hear you just had a birthday and you are " << age << " years old.\n";
 
     if (age < 12)
-        cout << "Next year you will be " << age + 1 << endl;
+        cout << "Next year you will be " << age + 1 << ".\n";
     
     if (age == 17)
-        cout << "Next year you will be able to vote."  << endl;
+        cout << "Next year you will be able to vote.\n";
 
     if (age > 70)
-        cout << "I hope you are enjoying retirement." << endl;
+        cout << "I hope you are enjoying retirement.\n";
 
-    cout << "We should meet sometime soon" << endl << "Yours sincerely\n\n" << "Zoli\n";
+    cout << "We should meet sometime soon.\n" << "Yours sincerely\n\n" << "Zoli\n";
 
 
     return 0;

@@ -13,7 +13,7 @@ int main()
     if (testnum % 2 == 0)
         cout << testnum << " is an even number." << endl;
     else
-        cout << testnum << " is an odd number" << endl;
+        cout << testnum << " is an odd number." << endl;
 
     return 0;
 }
