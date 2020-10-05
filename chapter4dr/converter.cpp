@@ -1,8 +1,8 @@
-#include "std_lib_facilities.h"
+#include "../std_lib_facilities.h"
 
 bool acceptedmeas(string unit)
 	{
-		if ((unit != "cm") && (unit != "m") && (unit != "in") && (unit != "ft"))	//testing for accepted values in one if statement
+		if ((unit != "cm") && (unit != "m") && (unit != "in") && (unit != "ft"))
 		{
 			cout << "Not an accepted measurement (try cm, m, in or ft)." << endl;
 			return false;
@@ -35,23 +35,21 @@ int main()
 	string unit = "";
 	vector<double> numbers;
 	
-	cout << "Please enter a number and a measurement (accepted: cm, m, in, ft): " << endl
-		<< "To exit program, enter | (AltGr+W)" << endl;
+	cout << "Please enter a number and a measurement (accepted: cm, m, in, ft): " << endl;
 
 	while (cin >> num >> unit)
 	{
-		if(acceptedmeas(unit))	//checking if measurement is accepted
+		if(acceptedmeas(unit))
 		{
 			cout << "The value you entered is: "  << num << ' ' << unit << endl;
 
-			num_in_meters = converter(num, unit);	//converting all values to metres
+			num_in_meters = converter(num, unit);
 
-			if (smallest == 0 && largest == 0)	//testing if it is the first iteration (or previous values are only 0)
+			if (smallest == 0 && largest == 0)
 			{
 				smallest = num_in_meters;
 				largest = num_in_meters;
 			}
-
 
 			if (num_in_meters > largest)
 			{
@@ -71,10 +69,9 @@ int main()
 		}
 	}
 
-	cout << "You have entered " << numbers.size() << " values." << endl
-		<< "The sum of these are " << sum_in_meters << " meters." << endl
-		<<	"The largest of these was " << largest << ", the smallest was " << smallest << " meters." << endl;
-
+	cout << "You have entered " << numbers.size() << " values." << endl;
+	cout << "The sum of these are " << sum_in_meters << " meters." << endl;
+	cout <<	"The largest of these was " << largest << " meters, the smallest was " << smallest << " meters." << endl;
 	cout << "The values in increasing order (in meters): " << endl;
 
 	sort(numbers);
