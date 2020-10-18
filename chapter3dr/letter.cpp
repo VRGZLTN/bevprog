@@ -23,11 +23,23 @@
     char friend_sex = '0';
     cin >> friend_sex;
 
-    if (friend_sex == 'm')
+    /*if (friend_sex == 'm')
         cout << "If you see " << friend_name << " please ask him to call me.\n";
 
     if (friend_sex == 'f')
-        cout << "If you see " << friend_name << " please ask her to call me.\n";
+        cout << "If you see " << friend_name << " please ask her to call me.\n";*/
+
+    switch(friend_sex) {
+        case 'm':
+            cout << "If you see " << friend_name << " please ask him to call me.\n";
+            break;
+        case 'f':
+            cout << "If you see " << friend_name << " please ask her to call me.\n";
+            break;
+        default:
+            simple_error("Only 'f' and 'm' are allowed");
+            break;
+    }
 
     cout << "Please enter the age of the recipient:\n";
 
