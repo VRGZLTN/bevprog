@@ -62,14 +62,16 @@ try{
 	if (!point_out) error("can't output to file");
 
 	for (const auto& p : original_points)
-		point_out << p.x << ' ' << p.y << "\n";
-
+		point_out << '(' << p.x << ',' << p.y << ")\n";
 	point_out.close();
 
 	ifstream point_in {"mydata.txt"};
 	vector<Point> processed_points;
+	char ch1 = '(';
+	char ch2 = ',';
+	char ch3 = ')';
 
-	while (point_in >> xcoord >> ycoord){
+	while (point_in >> ch1 >> xcoord >> ch2 >> ycoord >> ch3){
 		processed_points.push_back(Point{xcoord, ycoord});
 	}
 
@@ -89,5 +91,8 @@ try{
 	return 0;
 } catch(exception& e){
 	cerr << e.what() << endl;
+	return 1;
+} catch(...){
+	cerr << "Something is wrong!"; << endl;
 	return 1;
 }
